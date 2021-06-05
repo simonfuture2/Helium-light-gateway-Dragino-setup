@@ -6,5 +6,7 @@ Steps to install helium gateway-rs on the gateway
 3) ```shell opkg install /tmp/helium-gateway-v1.0.0-alpha.9-dragino.ipk ```
 
 Check Gateway Keys- ```shell helium_gateway key info ```
+
 Check Logs- ```shell logread | grep helium_gateway ```
+
 Restart the gateway-rs service- ```shell /etc/init.d/helium_gateway restart ```
