@@ -10,17 +10,17 @@ In this project, we are going to create a Light Hotspot using the Dragino LPS8 G
 
 We will require a couple of software as well to configure our Gateway as a Light Hotspot. These Softwares are PuTTY, WinSCP, and gateway-rs. We also need to make sure that we are using the latest Dragino firmware and if not we first need to update that. Then we need to configure the Gateway by using some simple steps. One of the most important steps is to install helium gateway-rs on the gateway for which we need to execute the commands given below one by one. 
 
-1)  cd /tmp 
-2)  wget -O helium-gateway-v1.0.0-alpha.9-dragino.ipk https://github.com/helium/gateway-rs/releases/download/v1.0.0-alpha.9/helium-gateway-v1.0.0-alpha.9-dragino.ipk 
-3)  opkg install /tmp/helium-gateway-v1.0.0-alpha.9-dragino.ipk 
+1)  ``` cd /tmp ``` 
+2)  ``` wget -O helium-gateway-v1.0.0-alpha.9-dragino.ipk https://github.com/helium/gateway-rs/releases/download/v1.0.0-alpha.9/helium-gateway-v1.0.0-alpha.9-dragino.ipk ``` 
+3)  ``` opkg install /tmp/helium-gateway-v1.0.0-alpha.9-dragino.ipk ``` 
 
 When the above commands are successfully executed we will have the helium gateway-rs installed in our system. After the installation, we are nearly done with the configuration. We only need to do some small changes in a couple of files and we are done. After the configuration, we can check that the Gateway is working fine or not by executing the Check Gateway Keys and Check Logs commands given below which completes the configuration part. 
 
-Check Gateway Keys-  helium_gateway key info 
+Check Gateway Keys- ``` helium_gateway key info ``` 
 
-Check Logs-  logread | grep helium_gateway 
+Check Logs- ``` logread | grep helium_gateway ``` 
 
-Restart the gateway-rs service-  /etc/init.d/helium_gateway restart  
+Restart the gateway-rs service- ``` /etc/init.d/helium_gateway restart  ```
 
 After the completion of the Configuration part, We need to restart our Gateway-rs service using the restart command mentioned above and our Gateway will be ready for testing. What it actually does is that it acts as a channel between the LoRaWAN Node and the Helium Network. So any message that is transferred by the node reaches the Helium Network Console through the Gateway acting as Light Hotspot. We also have with us a pre-configured LoRaWAN Node for testing the hotspot.
 
